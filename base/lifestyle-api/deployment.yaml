@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lifestyle-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lifestyle-api
+  template:
+    metadata:
+      labels:
+        app: lifestyle-api
+    spec:
+      containers:
+        - name: lifestyle-api
+          image: ghcr.io/${OWNER}/lifestyle-api:${IMAGE_TAG}
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: postgres-credentials

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lifestyle-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lifestyle-front
+  template:
+    metadata:
+      labels:
+        app: lifestyle-front
+    spec:
+      containers:
+        - name: lifestyle-front
+          image: ghcr.io/${OWNER}/lifestyle-front:${IMAGE_TAG}
+          ports:
+            - containerPort: 80

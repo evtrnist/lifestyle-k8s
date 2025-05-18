@@ -1,0 +1,4 @@
+base/secrets/*.yaml
+*.env
+*.bak
+*.tmp
