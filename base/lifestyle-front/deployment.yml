@@ -17,3 +17,5 @@ spec:
           image: ghcr.io/${OWNER}/lifestyle-front:${IMAGE_TAG}
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: ghcr-creds
