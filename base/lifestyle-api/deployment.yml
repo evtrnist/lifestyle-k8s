@@ -20,5 +20,5 @@ spec:
           envFrom:
             - secretRef:
                 name: postgres-credentials
-    imagePullSecrets:
-      - name: ghcr-creds
+      imagePullSecrets:
+        - name: ghcr-creds
